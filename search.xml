@@ -4,11 +4,11 @@
   
     
     <entry>
-      <title>第一篇文章</title>
+      <title>网站nginx代理过程</title>
       <link href="/2023/02/06/2023-2-6%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/"/>
       <url>/2023/02/06/2023-2-6%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</url>
       
-        <content type="html"><![CDATA[<h2 id="这是我的第一篇文章"><a href="#这是我的第一篇文章" class="headerlink" title="这是我的第一篇文章"></a>这是我的第一篇文章</h2><p>今天星期一</p>]]></content>
+        <content type="html"><![CDATA[<h1 id="网站nginx代理过程"><a href="#网站nginx代理过程" class="headerlink" title="网站nginx代理过程"></a>网站nginx代理过程</h1><h2 id="1-申请服务器并在虚拟机中安装nginx-（yum-install-nginx）"><a href="#1-申请服务器并在虚拟机中安装nginx-（yum-install-nginx）" class="headerlink" title="1.申请服务器并在虚拟机中安装nginx （yum install nginx）"></a>1.申请服务器并在虚拟机中安装nginx （yum install nginx）</h2><pre><code>-通过whereis nginx 查看nginx的路径-通过nginx -v查看版本</code></pre><h2 id="2-修改nginx的配置"><a href="#2-修改nginx的配置" class="headerlink" title="2.修改nginx的配置"></a>2.修改nginx的配置</h2><pre><code>-进入cd /etc/nginx-修改配置文件 vim nginx.conf  (vim内的操作：输入i进入插入模式，esc退出后输入：wq 保存退出)    -在server&#123;&#125;内填入相应的网页资源路径（在/root路径下创建文件夹，比如/root/test/www/demo）代理等        -可配置多个server（也就是说nginx可以代理很多网站，只要端口号区分就行）    -此处端口号 不! 推! 荐! 使用80，配置的端口号要在服务器安全组内通过（1-65535全部放开就行）</code></pre><h2 id="3-在网页本地资源路径（放网页的文件夹）下通过git上传至linux"><a href="#3-在网页本地资源路径（放网页的文件夹）下通过git上传至linux" class="headerlink" title="3.在网页本地资源路径（放网页的文件夹）下通过git上传至linux"></a>3.在网页本地资源路径（放网页的文件夹）下通过git上传至linux</h2><pre><code>-scp -r dist/ root@8.130.29.185:/root/test/www/demo</code></pre><h2 id="4-nginx-s-stop-关闭nginx服务，然后在输入nginx启动"><a href="#4-nginx-s-stop-关闭nginx服务，然后在输入nginx启动" class="headerlink" title="4.nginx -s stop 关闭nginx服务，然后在输入nginx启动"></a>4.nginx -s stop 关闭nginx服务，然后在输入nginx启动</h2><h2 id="5-访问你的服务器公共地址并添加端口号，网站上线成功。"><a href="#5-访问你的服务器公共地址并添加端口号，网站上线成功。" class="headerlink" title="5.访问你的服务器公共地址并添加端口号，网站上线成功。"></a>5.访问你的服务器公共地址并添加端口号，网站上线成功。</h2>]]></content>
       
       
       
